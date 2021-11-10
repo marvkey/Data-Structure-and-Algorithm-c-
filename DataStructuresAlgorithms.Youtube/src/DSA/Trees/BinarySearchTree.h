@@ -1,6 +1,5 @@
 #pragma once
 #include<iostream>
-#define SPACE 10
 class TreeNode{
 public:
 	int Value=0;
@@ -47,8 +46,14 @@ public:
                 break;
             }
             tempNode = tempNode->Right;
-        }
+        };
 
+    }
+    void PrintPreOrder(TreeNode* node) {  //(Node,Left,Right)
+        if (node == nullptr)return;
+        std::cout << node->Value << " ";
+        PrintPreOrder(node->Left);
+        PrintPreOrder(node->Right);
     }
 
     static void Maine() {
@@ -88,7 +93,8 @@ public:
 
             break;
             case 4: // PRINT
-
+            std::cout<<"PRINT\n";
+            obj.PrintPreOrder(obj.Root);
             break;
             case 5:
             break;

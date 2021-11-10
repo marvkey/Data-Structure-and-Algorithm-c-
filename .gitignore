@@ -1,0 +1,13 @@
+#Directories
+bin/
+bin-int/
+.vs/
+.idea/
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+**.obj
+**.dll 
+

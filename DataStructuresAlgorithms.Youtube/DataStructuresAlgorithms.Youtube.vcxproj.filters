@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="src\DSA\Queue.h" />
+    <ClInclude Include="src\DSA\Stack.h" />
+    <ClInclude Include="src\DSA\LinkedList\SingularLinkedList.h" />
+    <ClInclude Include="src\DSA\LinkedList\DoubleLInkedList.h" />
+    <ClInclude Include="src\DSA\LinkedList\CircularLinkedList.h" />
+    <ClInclude Include="src\Algorithms\LinearSortAlgorithm.h" />
+    <ClInclude Include="src\Algorithms\SelectionSort.h" />
+    <ClInclude Include="src\Algorithms\BinarySearch.h" />
+    <ClInclude Include="src\Algorithms\BubbleSort.h" />
+    <ClInclude Include="src\Algorithms\InsertionSort.h" />
+    <ClInclude Include="src\Algorithms\MergeSort.h" />
+    <ClInclude Include="src\Algorithms\QuickSort.h" />
+    <ClInclude Include="src\DSA\Trees\BinarySearchTree.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Maincpp.cpp" />
+  </ItemGroup>
+</Project>

@@ -55,7 +55,12 @@ public:
         PrintPreOrder(node->Left);
         PrintPreOrder(node->Right);
     }
-
+    void PrintInOrder(TreeNode* node){//(left,Node,Right)
+        if(node==nullptr)return;
+        PrintInOrder(node->Left);
+        std::cout<<node->Value<<" ";
+        PrintInOrder(node->Right);
+    }
     static void Maine() {
         BST obj;
         int option,val;
@@ -94,7 +99,7 @@ public:
             break;
             case 4: // PRINT
             std::cout<<"PRINT\n";
-            obj.PrintPreOrder(obj.Root);
+            obj.PrintInOrder(obj.Root);
             break;
             case 5:
             break;

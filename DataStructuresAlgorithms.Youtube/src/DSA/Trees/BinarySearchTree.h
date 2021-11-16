@@ -67,6 +67,18 @@ public:
         PrintPostOrder(node->Right);
         std::cout << node->Value << " ";
     }
+    #define SPACE 10
+    void print2D(TreeNode* r,int space) {
+        if (r == NULL) // Base case  1
+            return;
+        space += SPACE; // Increase distance between levels   2
+        print2D(r->Right,space); // Process right child first 3 
+        std::cout << std::endl;
+        for (int i = SPACE; i < space; i++) // 5 
+            std::cout << " "; // 5.1  
+        std::cout << r->Value << "\n"; // 6
+        print2D(r->Left,space); // Process left child  7
+    }
     static void Maine() {
         BST obj;
         int option,val;
@@ -104,16 +116,16 @@ public:
 
             break;
             case 4: // PRINT
-            std::cout<<"PRINT\n";
-            std::cout<<"Pre order: ";
-            obj.PrintPreOrder(obj.Root);
-            std::cout << std::endl;
-            std::cout << "Pre Inorder: ";
-            obj.PrintInOrder(obj.Root);
-            std::cout << std::endl;
-            std::cout << "Post Order: ";
-            obj.PrintPostOrder(obj.Root);
-            std::cout << std::endl;
+                std::cout<<"PRINT\n";
+                std::cout<<"Pre order: ";
+                obj.PrintPreOrder(obj.Root);
+                std::cout << std::endl;
+                std::cout << "Pre Inorder: ";
+                obj.PrintInOrder(obj.Root);
+                std::cout << std::endl;
+                std::cout << "Post Order: ";
+                obj.PrintPostOrder(obj.Root);
+                std::cout << std::endl;
             break;
             case 5:
             break;

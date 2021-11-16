@@ -79,6 +79,28 @@ public:
         std::cout << r->Value << "\n"; // 6
         print2D(r->Left,space); // Process left child  7
     }
+
+    TreeNode* IterativeSearch(int value){
+        TreeNode* temp = Root;
+        if(temp ==nullptr)
+            return nullptr;
+        while (temp != nullptr){
+            if(value == temp->Value ){
+                return temp;
+            }
+
+            if(value < temp->Value){
+                temp = temp->Left;
+                continue;
+            }
+
+            if (value > temp->Value) {
+                temp = temp->Right;
+                continue;
+            }
+        }
+        return nullptr;
+    }
     static void Maine() {
         BST obj;
         int option,val;
@@ -111,6 +133,16 @@ public:
             break;
 
             case 2:
+                std::cout<<"SEARCH"<<std::endl;
+                std::cout<<"Enter value to find in binary searhc tree: ";
+                std::cin>>val;
+                new_node =obj.IterativeSearch(val);
+                if(new_node !=nullptr){
+                    std::cout<<"Value found"<<std::endl;
+                }
+                else{
+                    std::cout << "Value Not found" << std::endl;
+                }
             break;
             case 3:
 

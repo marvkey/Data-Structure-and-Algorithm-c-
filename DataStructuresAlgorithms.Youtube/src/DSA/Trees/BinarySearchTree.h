@@ -101,6 +101,19 @@ public:
         }
         return nullptr;
     }
+    int Height(TreeNode* node) {
+        if (node == nullptr)
+            return -1;
+        /* compute the height of each subtree */
+        int lheight = Height(node->Left);
+        int rheight = Height(node->Right);
+
+        /* use the larger one */
+        if (lheight > rheight)
+            return (lheight + 1);
+        else 
+            return (rheight + 1);
+    }
     static void Maine() {
         BST obj;
         int option,val;

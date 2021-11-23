@@ -114,6 +114,20 @@ public:
         else 
             return (rheight + 1);
     }
+    void printGivenLevel(TreeNode* node, int level) {
+        if (node == nullptr)
+            return;
+        if (level == 0)
+            std::cout << node->Value << " ";
+            return;
+        printGivenLevel(node->Left, level - 1);
+        printGivenLevel(node->Right, level - 1);
+    }
+    void printLevelOrderBFS(TreeNode* node) {
+        int h = Height(node);
+        for (int i = 0; i <= h; i++)
+            printGivenLevel(node, i);
+    }
     static void Maine() {
         BST obj;
         int option,val;

@@ -128,6 +128,51 @@ public:
         for (int i = 0; i <= h; i++)
             printGivenLevel(node, i);
     }
+    TreeNode* MinValueNode(TreeNode* node) {
+        TreeNode* temp = node;
+        while (temp->Left != nullptr) {
+            temp = temp->Left;
+        }
+        return temp;
+    }
+    TreeNode* MaxValueNode(TreeNode* node) {
+        TreeNode* temp = node;
+        while (temp->Right != nullptr) {
+            temp = temp->Right;
+        }
+        return temp;
+    }
+    TreeNode* DeleteNode(TreeNode* node, int value) {
+        if (node == nullptr)return;
+
+        if (value < node->Value) {
+            node->Left = DeleteNode(node->Left, value);
+            return;
+        }
+
+        if (value > node->Value) {
+            node->Right= DeleteNode(node->Right, value);
+            return;
+        }
+
+        // if the value and the node->value are equal
+        if (node->Left == nullptr) {// only one node or right node
+            TreeNode* temp = node->Right;
+            delete node;
+            return temp;
+        }
+        if (node->Right == nullptr) { // has only left node
+            TreeNode* temp = node->Left;
+            delete node;
+            return temp;
+        } 
+        // has 2 node childre
+        TreeNode* temp = MinValueNode(node->Right);
+        node->Value = temp->Value;// copy content
+        node->Right = DeleteNode(node->Right, temp->Value);
+        return node;
+    }
+    
     static void Maine() {
         BST obj;
         int option,val;

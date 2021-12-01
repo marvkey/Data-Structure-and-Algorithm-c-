@@ -172,7 +172,25 @@ public:
         node->Right = DeleteNode(node->Right, temp->Value);
         return node;
     }
-    
+    TreeNode* InsertRecursive(TreeNode* nodePostion, TreeNode* new_node)
+    {
+        if (nodePostion == nullptr){
+            nodePostion = new_node;
+            std::cout << "Insertion successful" << std::endl;
+            return nodePostion;
+        }
+
+        if (new_node->Value < nodePostion->Value)
+            nodePostion->Left = InsertRecursive(nodePostion->Left, new_node);
+        else if (new_node->Value > nodePostion->Value)
+            nodePostion->Right = InsertRecursive(nodePostion->Right, new_node);
+        else{
+            std::cout << "No duplicate values allowed!" << std::endl;
+            return nodePostion;
+        }
+        return nodePostion;
+    }
+
     static void Maine() {
         BST obj;
         int option,val;

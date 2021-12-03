@@ -1,16 +1,6 @@
 #pragma once
 #include<iostream>
-class TreeNode{
-public:
-	int Value=0;
-	TreeNode* Left =nullptr;
-	TreeNode* Right=nullptr;
-	TreeNode() =default;
-	TreeNode(int data):
-		Value(data)
-	{}
-
-};
+#include "TreeNode.h"
 // binary search tree
 class BST{
 public:

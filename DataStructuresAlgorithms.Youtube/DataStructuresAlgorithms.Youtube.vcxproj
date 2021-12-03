@@ -31,7 +31,9 @@
     <ClInclude Include="src\DSA\LinkedList\SingularLinkedList.h" />
     <ClInclude Include="src\DSA\Queue.h" />
     <ClInclude Include="src\DSA\Stack.h" />
+    <ClInclude Include="src\DSA\Trees\AVLSearchTree.h" />
     <ClInclude Include="src\DSA\Trees\BinarySearchTree.h" />
+    <ClInclude Include="src\DSA\Trees\TreeNode.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Maincpp.cpp" />

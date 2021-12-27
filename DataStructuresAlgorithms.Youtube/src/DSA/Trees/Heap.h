@@ -98,4 +98,18 @@ public:
 			MinHeapify(smallest);
 		}
 	}
+
+	void decreaseKey(int i, int new_val) {
+		harr[i] = new_val;
+		while (i != 0 && harr[parent(i)] > harr[i]) {
+			swap( & harr[i], & harr[parent(i)]);
+			i = parent(i);
+		}
+  	}
+  	// This function deletes key at index i. It first reduced value to minus
+  	// infinite, then calls extractMin()
+  	void deleteKey(int i) {
+    	decreaseKey(i, INT_MIN);
+    	extractMin();
+  	}
 };

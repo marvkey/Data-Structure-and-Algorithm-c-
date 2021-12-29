@@ -99,17 +99,17 @@ public:
 		}
 	}
 
-	void decreaseKey(int i, int new_val) {
-		harr[i] = new_val;
-		while (i != 0 && harr[parent(i)] > harr[i]) {
-			swap( & harr[i], & harr[parent(i)]);
-			i = parent(i);
+	void DecreaseKey(int i, int new_val) {
+		Harr[i] = new_val;
+		while (i != 0 && Harr[Parent(i)] > Harr[i]) {
+			swap(  Harr[i], Harr[Parent(i)]);
+			i = Parent(i);
 		}
   	}
   	// This function deletes key at index i. It first reduced value to minus
   	// infinite, then calls extractMin()
-  	void deleteKey(int i) {
-    	decreaseKey(i, INT_MIN);
-    	extractMin();
+  	void DeleteKey(int i) {
+    	DecreaseKey(i, INT_MIN);
+    	ExtractMin();
   	}
 };

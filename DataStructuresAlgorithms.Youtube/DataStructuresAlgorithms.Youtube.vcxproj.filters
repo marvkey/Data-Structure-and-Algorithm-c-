@@ -17,6 +17,7 @@
     <ClInclude Include="src\DSA\Trees\TreeNode.h" />
     <ClInclude Include="src\DSA\Trees\AVLSearchTree.h" />
     <ClInclude Include="src\DSA\Trees\Heap.h" />
+    <ClInclude Include="src\DSA\Trees\Graph.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Maincpp.cpp" />
